@@ -33,8 +33,11 @@ Your work will be evaluated against the following criteria:
 
 # Assumption
 Input: Assumed the input is String, and if the input is null, it would throw IllegalArgumentException exception
+
 Output: the output is String
+
 Zip code should be positive number
+
 Zip code range should be valid, which means the there are only lower bound and upper bound exist and lower bound should not be greater than the upper bound
 Duplicate zip code ranges are a possibility.
 
@@ -42,15 +45,16 @@ Duplicate zip code ranges are a possibility.
 ArrayList to implement the List interface
 
 # Approach
-First convert the input of String to the List of Range(Range is the custom class), and check the validation of the input
-Then sort the each Range according to the ascending order of the lower bound, and traverse the whole List
-If the Range intervals is disjoint, then add the the range to the result, otherwise update the upper bound if needed
-Finally output the String via the toString method in the Range class
+- First convert the input of String to the List of Range(Range is the custom class), and check the validation of the input
+- Then sort the each Range according to the ascending order of the lower bound, and traverse the whole List
+- If the Range intervals is disjoint, then add the the range to the result, otherwise update the upper bound if needed
+- Finally output the String via the toString method in the Range class
 
 # Test
-Junit 5 with annotation of @AfterEach @BeforeEach @Test
-check the corner case of when input is null, String with 0 length, negative zip code, invalid range of zip code (lower bound greater than upper bound, don't have lower bound or upper bound, have more than 2 bounds)
-check the general test cases of 
+- Junit 5 with annotation of @AfterEach @BeforeEach @Test
+- check the corner case of when input is null, String with 0 length, negative zip code, invalid range of zip code (lower bound greater than upper bound, don't have lower bound or upper bound, have more than 2 bounds)
+- check the general test cases of 
+
 input1 = [94133,94133] [94200,94299] [94600,94699]
 output1 = [94133,94133] [94200,94299] [94600,94699]
 
@@ -58,5 +62,5 @@ input2 = [94133,94133] [94200,94299] [94226,94399]
 output2 = [94133,94133] [94200,94399]
 
 # Time Complexity & Space Complexity
-Time complexity: O(nlog(n)) because the Collection.sort has been used
-Space complexity: O(n) because the output List of Range would be created
+- Time complexity: O(nlog(n)) because the Collection.sort has been used
+- Space complexity: O(n) because the output List of Range would be created
