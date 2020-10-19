@@ -9,6 +9,9 @@ public class ZipCodeProcessor {
 	}
 
 	public List<Range> getRangeList(String zipcodeRanges) {
+		if (zipcodeRanges == null || zipcodeRanges.length() == 0) {
+			throw new IllegalArgumentException("Illegale input");
+		}
 		String[] zipcodeIntervals = zipcodeRanges.split(" ");
 		List<Range> zipcodesList = new ArrayList<>();
 		for (int i = 0; i < zipcodeIntervals.length; i++) {

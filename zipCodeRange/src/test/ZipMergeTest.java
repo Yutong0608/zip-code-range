@@ -93,6 +93,24 @@ class ZipMergeTest {
 		});
 	}
 	
+	@Test
+	public void Should_Throw_Exception_Null() {
+		System.out.println(
+				"Should_Throw_Exception If input is null");
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			zipcodeProcessor.getRangeList(null);
+		});
+	}
+	
+	@Test
+	public void Should_Throw_Exception_0_Length_String() {
+		System.out.println(
+				"Should_Throw_Exception If input is the String with 0 length");
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			zipcodeProcessor.getRangeList("");
+		});
+	}
+	
 	@AfterEach
 	public void teardown(){
 		System.out.println("TearDown Method");
