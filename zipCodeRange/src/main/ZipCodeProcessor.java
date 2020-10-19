@@ -28,7 +28,7 @@ public class ZipCodeProcessor {
 		int lower = Integer.parseInt(zipRange[0]);
 		int upper = Integer.parseInt(zipRange[1]);
 		if (upper < 0 || lower < 0) {
-			throw new IllegalArgumentException(upper + " " + upper + ": " + "Illegale Zipcod, Must be Positive");
+			throw new IllegalArgumentException(upper + " " + upper + ": " + "Illegale Zipcode, Must be Positive");
 		}
 		Range zipcode = null;
 		if (validateRange(lower, upper)) {
